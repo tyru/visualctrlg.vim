@@ -20,10 +20,10 @@ function! visualctrlg#report(verbose) "{{{
     let lines_num = getpos("'>")[1] - getpos("'<")[1] + 1
     if a:verbose
         echo printf('%d line(s), %d byte(s), %d char(s), %d width, %d display width',
-        \           lines_num, strlen(text), strchars(text), strwidth(text), strdisplaywidth(text))
+        \           lines_num, strlen(text), s:strchars(text), strwidth(text), strdisplaywidth(text))
     else
         echo printf('%d line(s), %d byte(s), %d char(s)',
-        \           lines_num, strlen(text), strchars(text))
+        \           lines_num, strlen(text), s:strchars(text))
     endif
 
     " Sleep to see the output in command-line.
@@ -49,6 +49,18 @@ function! s:get_selected_text() "{{{
         call setreg('z', save_z, save_z_type)
     endtry
 endfunction "}}}
+
+" strchars() {{{
+if exists('*strchars')
+    function! s:strchars(expr)
+        return strchars(a:expr)
+    endfunction
+else
+    function! s:strchars(expr)
+        return strlen(substitute(a:expr, '.', 'x', 'g'))
+    endfunction
+endif
+" }}}
 
 
 " Restore 'cpoptions' {{{
