@@ -14,7 +14,7 @@ set cpo&vim
 
 
 vnoremap <silent> <Plug>(visualctrlg-verbosely) :<C-u>call visualctrlg#report_verbosely()<CR>
-vnoremap <silent> <Plug>(visualctrlg-briefly) :<C-u>call visualctrlg#report_briefly()<CR>
+vnoremap <silent> <Plug>(visualctrlg-briefly)   :<C-u>call visualctrlg#report_briefly()<CR>
 
 
 " Restore 'cpoptions' {{{
