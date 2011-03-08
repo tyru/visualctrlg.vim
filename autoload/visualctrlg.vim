@@ -12,11 +12,9 @@ function! visualctrlg#load() "{{{
 endfunction "}}}
 
 
-function! visualctrlg#report(verbose, ...) "{{{
+function! visualctrlg#report(verbose) "{{{
     let default = 1
-    let sleep_arg = get(a:000, 0, default)
-    let sleep_arg = sleep_arg =~# '^\d\+m\=$' ? sleep_arg : default
-    let sleep_arg = sleep_arg !~# '^0m\=$'    ? sleep_arg : default
+    let sleep_arg = v:count != 0 ? v:count : default
     let text = s:get_selected_text()
 
     let lines_num = getpos("'>")[1] - getpos("'<")[1] + 1
