@@ -75,7 +75,7 @@ else
         while 1
             let ucs = char2nr(substitute(str, mx_first, '\1', ''))
             if ucs == 0
-            break
+                break
             endif
             let width = width + s:wcwidth(ucs)
             let str = substitute(str, mx_first, '', '')
