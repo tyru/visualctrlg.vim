@@ -20,7 +20,7 @@ function! visualctrlg#report(verbose) "{{{
     let lines_num = getpos("'>")[1] - getpos("'<")[1] + 1
     if a:verbose
         echo printf('%d line(s), %d byte(s), %d char(s), %d width, %d display width',
-        \           lines_num, strlen(text), s:strchars(text), s:strwidth(text), strdisplaywidth(text))
+        \           lines_num, strlen(text), s:strchars(text), s:strwidth(text), s:strdisplaywidth(text))
     else
         echo printf('%d line(s), %d byte(s), %d char(s)',
         \           lines_num, strlen(text), s:strchars(text))
@@ -101,6 +101,31 @@ else
             return 2
         endif
         return 1
+    endfunction
+endif
+" }}}
+" strdisplaywidth() {{{
+if exists('*strdisplaywidth')
+    let s:strdisplaywidth = function('strdisplaywidth')
+else
+    " From s:strdisplaywidth() of autofmt.vim. ynkdir++
+    function s:strdisplaywidth(str, ...)
+        let vcol = get(a:000, 0, 0)
+        let w = 0
+        for c in split(a:str, '\zs')
+            if c == "\t"
+                let w += &tabstop - ((vcol + w) % &tabstop)
+            elseif c =~ '^.\%2v'  " single-width char
+                let w += 1
+            elseif c =~ '^.\%3v'  " double-width char or ctrl-code (^X)
+                let w += 2
+            elseif c =~ '^.\%5v'  " <XX>    (^X with :set display=uhex)
+                let w += 4
+            elseif c =~ '^.\%7v'  " <XXXX>  (e.g. U+FEFF)
+                let w += 6
+            endif
+        endfor
+        return w
     endfunction
 endif
 " }}}
