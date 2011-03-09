@@ -86,7 +86,7 @@ else
     " (yes, I know the difference between lvalue and rvalue.
     " it results in "error: lvalue required as increment operand" in gcc.)
     function! s:wcwidth(expr)
-        " XXX: 'ambiwidth'
+        " XXX: 'ambiwidth', 'display'
         let ucs = a:expr
         if (ucs >= 0x1100
         \  && (ucs <= 0x115f
