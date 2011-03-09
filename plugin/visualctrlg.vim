@@ -17,6 +17,13 @@ vnoremap <silent> <Plug>(visualctrlg-verbosely) :<C-u>call visualctrlg#report_ve
 vnoremap <silent> <Plug>(visualctrlg-briefly)   :<C-u>call visualctrlg#report_briefly()<CR>
 
 
+if !exists('g:visualctrlg_no_default_keymappings')
+\   || !g:visualctrlg_no_default_keymappings
+    vmap g<C-g> <Plug>(visualctrlg-verbosely)
+    vmap <C-g>  <Plug>(visualctrlg-briefly)
+endif
+
+
 " Restore 'cpoptions' {{{
 let &cpo = s:save_cpo
 " }}}
