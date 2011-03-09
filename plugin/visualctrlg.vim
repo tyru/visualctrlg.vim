@@ -19,8 +19,8 @@ vnoremap <silent> <Plug>(visualctrlg-briefly)   :<C-u>call visualctrlg#report_br
 
 if !exists('g:visualctrlg_no_default_keymappings')
 \   || !g:visualctrlg_no_default_keymappings
-    vmap g<C-g> <Plug>(visualctrlg-verbosely)
-    vmap <C-g>  <Plug>(visualctrlg-briefly)
+    silent! vmap <unique> g<C-g> <Plug>(visualctrlg-verbosely)
+    silent! vmap <unique> <C-g>  <Plug>(visualctrlg-briefly)
 endif
 
 
