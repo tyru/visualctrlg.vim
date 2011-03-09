@@ -52,9 +52,7 @@ endfunction "}}}
 
 " strchars() {{{
 if exists('*strchars')
-    function! s:strchars(expr)
-        return strchars(a:expr)
-    endfunction
+    let s:strchars = function('strchars')
 else
     function! s:strchars(expr)
         return strlen(substitute(a:expr, '.', 'x', 'g'))
@@ -63,9 +61,7 @@ endif
 " }}}
 " strwidth() {{{
 if exists('*strwidth')
-    function! s:strwidth(expr)
-        return strwidth(a:expr)
-    endfunction
+    let s:strwidth = function('strwidth')
 else
     " From s:wcswidth() of googlereader.vim. mattn++
     function! s:strwidth(expr)
