@@ -1,4 +1,4 @@
-*visualctrlg.txt* *visualctrlg*
+*visualctrlg.txt* *visualctrlg* Report info about selected text
 
 Author:
   tyru <tyru.exe@gmail.com>
