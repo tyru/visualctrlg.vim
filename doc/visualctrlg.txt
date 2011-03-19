@@ -29,7 +29,7 @@ Changelog			|visualctrlg-changelog|
 ==============================================================================
 INTRODUCTION						*visualctrlg-introduction* {{{
 
-|visualctrlg| provides <C-g> and g<C-g> keymappings.
+|visualctrlg| provides <leader><C-g> and <leader>g<C-g> keymappings.
 these keymapings show the report for selected text.
 like |CTRL-G| and |g_CTRL-G| in |Normal-mode|.
 
@@ -48,8 +48,8 @@ KEYMAPPINGS					*visualctrlg-keymappings* {{{
 
 Default keymappings
 ----------------------
-<C-g>		<Plug>(visualctrlg-briefly)
-g<C-g>		<Plug>(visualctrlg-verbosely)
+<leader><:-g>		<Plug>(visualctrlg-briefly)
+<leader>g<C-g>		<Plug>(visualctrlg-verbosely)
 
 }}}
 }}}

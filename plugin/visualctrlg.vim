@@ -19,11 +19,11 @@ vnoremap <silent> <Plug>(visualctrlg-briefly)   :<C-u>call visualctrlg#report_br
 
 if !exists('g:visualctrlg_no_default_keymappings')
 \   || !g:visualctrlg_no_default_keymappings
-    if !hasmapto('g<C-g>', 'v', 0)
-        silent! vmap <unique> g<C-g> <Plug>(visualctrlg-verbosely)
+    if !hasmapto('<leader>g<C-g>', 'v', 0)
+        silent! vmap <unique> <leader>g<C-g> <Plug>(visualctrlg-verbosely)
     endif
-    if !hasmapto('<C-g>', 'v', 0)
-        silent! vmap <unique> <C-g>  <Plug>(visualctrlg-briefly)
+    if !hasmapto('<leader><C-g>', 'v', 0)
+        silent! vmap <unique> <leader><C-g>  <Plug>(visualctrlg-briefly)
     endif
 endif
 
