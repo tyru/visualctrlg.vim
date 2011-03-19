@@ -48,7 +48,7 @@ KEYMAPPINGS					*visualctrlg-keymappings* {{{
 
 Default keymappings
 ----------------------
-<leader><:-g>		<Plug>(visualctrlg-briefly)
+<leader><C-g>		<Plug>(visualctrlg-briefly)
 <leader>g<C-g>		<Plug>(visualctrlg-verbosely)
 
 }}}
