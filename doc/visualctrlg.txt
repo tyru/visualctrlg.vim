@@ -23,6 +23,7 @@ CONTENTS						*visualctrlg-contents*
 Introduction		|visualctrlg-introduction|
 Interface			|visualctrlg-interface|
   Keymappings		|visualctrlg-keymappings|
+  Variables			|visualctrlg-variables|
 Changelog			|visualctrlg-changelog|
 
 
@@ -50,6 +51,15 @@ Default keymappings
 ----------------------
 <C-g>		<Plug>(visualctrlg-briefly)
 g<C-g>		<Plug>(visualctrlg-verbosely)
+
+}}}
+------------------------------------------------------------------------------
+VARIABLES				*visualctrlg-variables* {{{
+
+					*g:visualctrlg_no_default_keymappings*
+g:visualctrlg_no_default_keymappings
+	If this variable is defined and non-zero,
+	|visualctrlg| will not define default keymappings.
 
 }}}
 }}}
