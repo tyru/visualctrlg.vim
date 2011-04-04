@@ -52,6 +52,9 @@ Default keymappings
 <C-g>		<Plug>(visualctrlg-briefly)
 g<C-g>		<Plug>(visualctrlg-verbosely)
 
+These get setup using: >
+	silent! vmap <unique> g<C-g> <Plug>(visualctrlg-verbosely)
+	silent! vmap <unique> <C-g>  <Plug>(visualctrlg-briefly)
 }}}
 ------------------------------------------------------------------------------
 VARIABLES				*visualctrlg-variables* {{{
